@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./TaskForm.css";
 import Tag from "../Tags/Tag";
 
-function TaskForm() {
+function TaskForm({ setTasks }) {
   const [taskData, setTaskData] = useState({
     task: "",
     status: "Ready For Development",
@@ -10,7 +10,6 @@ function TaskForm() {
   });
 
   const checkTag = (tagName) => {
-    console.log("tan", tagName);
     return taskData?.tags?.some((item) => item === tagName);
   };
 
@@ -23,7 +22,14 @@ function TaskForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(taskData);
+    setTasks((prev) => {
+      return [...prev, taskData];
+    });
+    setTaskData({
+      task: "",
+      status: "Ready For Development",
+      tags: [],
+    });
   };
 
   const selectedTags = (tagName) => {
@@ -41,17 +47,15 @@ function TaskForm() {
     }
   };
 
-  console.log(taskData);
-
   return (
     <div className="app_header">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Enter Class Details"
+          placeholder="Enter Task Details"
           className="task_input"
           name="task"
-          // value={taskData?.task}
+          value={taskData?.task}
           onChange={handleChange}
         />
         <div className="task_form_bottom">
@@ -76,7 +80,7 @@ function TaskForm() {
             <select
               className="task_status"
               name="status"
-              // value={taskData?.status}
+              value={taskData?.status}
               onChange={handleChange}
             >
               <option value="Ready For Development">

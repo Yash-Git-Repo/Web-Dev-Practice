@@ -2,7 +2,7 @@ import { tagKeyMap, tagStyle } from "../../common";
 import "./Tag.css";
 
 const Tag = (props) => {
-  const { tagName, selectedTags, selected } = props;
+  const { tagName, selectedTags, selected } = props
 
   const key = tagKeyMap[tagName];
 
