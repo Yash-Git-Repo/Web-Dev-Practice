@@ -11,7 +11,7 @@ const TaskColumn = (props) => {
           <img src={icon} alt="" className="task_column_icon"></img>
           {title}
         </h2>
-        <DropArea />
+        <DropArea onDrop={() => onDrop(status, 0)} />
         {task.map(
           (task, index) =>
             task.status === status && (
@@ -25,7 +25,7 @@ const TaskColumn = (props) => {
                 />
                 <DropArea onDrop={() => onDrop(status, index + 1)} />
               </>
-            )
+            ),
         )}
       </section>
     </div>

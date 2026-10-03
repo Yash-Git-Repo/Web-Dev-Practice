@@ -76,9 +76,8 @@ const Sellers = () => {
     };
     setUsers(users.map((u) => (u.id === user.id ? UpdateUser : u)));
     console.log(users);
-
     apiClient.patch("/users/${user.id}", UpdateUser);
-    setError(err.message);
+    setError(error.message);
     setUsers(users);
   };
 
