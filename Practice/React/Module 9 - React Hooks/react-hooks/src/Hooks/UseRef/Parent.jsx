@@ -6,17 +6,30 @@ const Parent = () => {
   //   const {name , setName} = useContext(UserContext);
   //   const [name, setName] = useState("");
   const { name, setName } = useUserDetails();
-  const inputRef = useRef("");
-  console.log("inputRed", inputRef);
+  const inputEle = useRef("");
+  console.log("inputRed", inputEle);
 
   return (
     <div>
       <h2>Hello : {name}</h2>
-      <CustomInput ref={inputRef} changeName={(e) => setName(e.target.value)} />
-      <button onClick={() => inputRef.current.focus()}>Focus Input </button>
-      <button onClick={() => setName("")}>Clear Input</button>
-      <button onClick={() => inputRef.current.focusInput()}>Focus Input</button>
-      <button onClick={() => inputRef.current.clearInput()}>Clear Input</button>
+      <CustomInput ref={inputEle} changeName={(e) => setName(e.target.value)} />
+      <button
+        onClick={() => {
+          inputEle.current.focus();
+        }}
+      >
+        Focus
+      </button>
+      <button
+        onClick={() => {
+          inputEle.current.value = "";
+          setName("");
+        }}
+      >
+        Clear
+      </button>
+      {/* <button onClick={() => inputEle.current.focusInput()}>Focus Input</button>
+      <button onClick={() => inputEle.current.clearInput()}>Clear Input</button> */}
     </div>
   );
 };

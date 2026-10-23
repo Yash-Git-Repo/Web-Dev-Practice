@@ -7,7 +7,7 @@ const SingleProduct = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
-    navigate(-2);
+    navigate(-1);
   };
   return (
     <div>

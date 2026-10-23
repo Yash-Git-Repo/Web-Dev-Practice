@@ -24,7 +24,12 @@ const UseMemo = () => {
 
   //   //?UseCalllback
     const calculateTables = useCallback(() => {
-      return [number * 1, number * 2, number * 3, number * 4];
+      // return [number * 1, number * 2, number * 3, number * 4, number * 5, number * 6,number * 7,number * 8,number * 9,number * 10];
+      const result = []
+      for (let i = 1; i <= 10; i++) {
+        result.push(number * i)
+      }
+      return result;
     }, [number]);
 
   // const calculateTables = () => {

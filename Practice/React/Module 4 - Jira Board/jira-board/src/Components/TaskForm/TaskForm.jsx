@@ -47,6 +47,15 @@ function TaskForm({ setTasks }) {
     }
   };
 
+  //// code optimization
+  //  const selectedTags = (tag) => {
+  //       setTaskData((prev) => {
+  //           const isSelected = prev.tags.includes(tag);
+  //           const tags = isSelected ? prev.tags.filter((item) => item !== tag) : [...prev.tags, tag]
+  //           return { ...prev, tags }
+  //       })
+  //   }
+
   return (
     <div className="app_header">
       <form onSubmit={handleSubmit}>

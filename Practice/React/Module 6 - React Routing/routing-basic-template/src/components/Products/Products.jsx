@@ -7,7 +7,7 @@ const Products = () => {
       <h2>Products</h2>
       <ul>
         <li>
-          <Link to="/products/1">Product1</Link>
+          <Link to="/products/1">Product 1</Link>
         </li>
         <li>
           <Link to="/products/2">Product 2</Link>

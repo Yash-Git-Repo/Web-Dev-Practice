@@ -48,7 +48,8 @@ const MyStateComponent = () => {
                 <input type="text"
                     placeholder='Enter Your Name'
                     value={name}
-                    onChange={(e) => { setName(e.target.value) }} />
+                    onChange={(e) => { setName(e.target.value) }} 
+                    />
                 <button>Submit</button>
             </form>
             <ul>
